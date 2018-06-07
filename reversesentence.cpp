@@ -58,12 +58,19 @@ int main() {
     string words;
     while (getline(cin, words)) {
         reverse(words.begin(), words.end()); //reverse()STL算法
-        unsigned i = 0, j = i;
-        while (i < words.size()) {
-            while (i < words.size() && words[i] != ' ') // words[i]不能解引用,i = words.size()
-                ++i;
-            reverse(words.begin() + j, words.begin() + i);
-            j = ++i;
+        unsigned b = 0, e = b;
+        while (b < words.size()) {
+           if(words[b] == ' ')
+           {
+               ++b,++e;
+           }
+           else if( ( e < words.size() && words[e] == ' ') || e == words.size())
+           {
+               reverse(words.begin()+b,words.begin()+e);
+               b = e;
+           }
+           else
+               e++;
         }
         cout << words << endl;
     }
