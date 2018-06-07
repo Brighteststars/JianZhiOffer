@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 
+
 int GetFirstK(int* data,int length,int k,int start,int end)
 {
     if(start > end)
