@@ -57,7 +57,7 @@ char* ReverseSentence(char* pData)
 int main() {
     string words;
     while (getline(cin, words)) {
-        reverse(words.begin(), words.end()); //reverse()STL算法
+        reverse(words.begin(), words.end()); // reverse()STL算法
         unsigned b = 0, e = b;
         while (b < words.size()) {
            if(words[b] == ' ')
